@@ -66,6 +66,7 @@ export default {
   align-items: flex-end;
   justify-content: center;
   height: 100%;
+  transition: background-color 500ms linear;
 }
 .selectedColorIndicator {
   margin-bottom: 20px;
