@@ -1,18 +1,40 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div :class="$style.container" >
+    <ColorPicker :colorPickerOptions="colorOptions" :class="$style.colorPicker" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import ColorPicker from '@/components/ColorPicker.vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    ColorPicker,
+  },
+  data() {
+    return {
+      colorOptions: [
+        'yellow',
+        'red',
+        'blue',
+        'green',
+        'orange',
+      ],
+    };
   },
 };
 </script>
+
+<style lang="scss" module>
+.container{
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+}
+.colorPicker{
+  grid-column: 2
+}
+</style>
